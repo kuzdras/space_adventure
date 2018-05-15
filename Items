@@ -1,6 +1,15 @@
+```Python
 class Item():
 	#Base class for all my items
 	def __init__(self, name, description)
 		self.name = name
 		self.description = description
 		self.value = value
+
+class Credits(Items):
+	def __init__(self, amount):
+	self.amount(amount)
+	super().__init__(name="Credits", description = "A stick of {} credits." format(str{self.amount)), value = self.amount)
+	
+	```
+	
