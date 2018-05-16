@@ -24,4 +24,9 @@ class SpaceSpider(Enemy):
                     description = "Green, dog-size spider. It has a eight red eyes and radioactive glow. It usualy lives on the planet surface")
     
     
-class Hopper
+class Hopper(Enemy):
+  def __init__(self):
+    super.__init__(name = "Hopper",
+                  hp = 10,
+                  damage = 3
+                  description = "Giant insect. It's has massive back legs and razor-sharp front ones.")
