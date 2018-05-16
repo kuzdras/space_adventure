@@ -24,12 +24,17 @@ class Pipe(Weapon):
 
 class ShockPistol(Weapon):
 	def __init__(self):
-		super.__init__(name = "Shock pistol",
+		super().__init__(name = "Shock pistol",
 		               description = "Handgun for self-defence use. It shots a bolt of electricity which deals minor damage to the body."
 		               damage = 8)
 
 class StunBaton(Weapon):
 	def __init__(self):
-		super.__init__(name = "Stun Baton",
+		super().__init__(name = "Stun Baton",
 		               description = "A stick charged with electricity. It strikes the nerve system. Commonly used by security officers."
 		               damage = 5)
+# Some utility items		
+class Flashlight(Item):
+	def __init__(self):
+		super().__init__(name = "Flashlight"
+				 description = "An average flashlight, lights up your path")
