@@ -26,7 +26,7 @@ class Start(map_tile):
     pass
   
 #===============# super class for rooms with items:
-class loot_room(map_tile):
+class LootRoom(map_tile):
     def __init__(self, x, y, item):
         self.item = item
         super().__init__(x, y)
@@ -52,7 +52,7 @@ class EnemyRoom(map_tile):
 #===============##===============#
 
 #===============##now some specific rooms:
-class first_corridor(loot_room):
+class first_corridor(LootRoom):
   def __init__(self,x,y):
     super().__init__(x, y, items.Flashlight())
     
@@ -61,7 +61,7 @@ class first_corridor(loot_room):
   There's a flashlight on the floor. Now you'll be able to examine other rooms more closely.
   """
   
-class spider_room(enemy_room):
+class spider_room(EnemyRoom):
   def __init__(self, x, y):
     super().__init__(x, y, Enemy.Space_Spider())
     
