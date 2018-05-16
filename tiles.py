@@ -40,7 +40,7 @@ class loot_room(MapTile):
 
 
 #===============# super for room with enemies:
-lass EnemyRoom(MapTile):
+class EnemyRoom(MapTile):
     def __init__(self, x, y, enemy):
         self.enemy = enemy
         super().__init__(x, y)
@@ -49,24 +49,14 @@ lass EnemyRoom(MapTile):
         if self.enemy.is_alive():
             the_player.hp = the_player.hp - self.enemy.damage
             print("Enemy does {} damage. You have {} HP remaining.".format(self.enemy.damage, the_player.hp))
-class one_way_corridor(map_tile):
-  def __init__(x,y,self,item):
-    self.item = item
-    super().__init__(x,y)
 #===============##===============#
 
 #===============##now some specific rooms:
 class first_corridor:
   def __init__(self,x,y):
     super().__init__(x, y, items.Flashlight())
+    
   def intro_text(self):"""
   Corridor is devastated. Plasteel walls are full of scratches and burns. Seems like there was a fight here. Now it's empty. Wait...
   There's a flashlight on the floor. Now you'll be able to examine other rooms more closely.
   """
-  def modify_player(self, player):
-    pass
-  
-
-class 
-    
-    
