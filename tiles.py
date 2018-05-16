@@ -26,7 +26,7 @@ class Start(map_tile):
     pass
   
 #===============# super class for rooms with items:
-class loot_room(MapTile):
+class loot_room(map_tile):
     def __init__(self, x, y, item):
         self.item = item
         super().__init__(x, y)
@@ -40,7 +40,7 @@ class loot_room(MapTile):
 
 
 #===============# super for room with enemies:
-class EnemyRoom(MapTile):
+class EnemyRoom(map_tile):
     def __init__(self, x, y, enemy):
         self.enemy = enemy
         super().__init__(x, y)
@@ -52,7 +52,7 @@ class EnemyRoom(MapTile):
 #===============##===============#
 
 #===============##now some specific rooms:
-class first_corridor:
+class first_corridor(loot_room):
   def __init__(self,x,y):
     super().__init__(x, y, items.Flashlight())
     
@@ -60,3 +60,19 @@ class first_corridor:
   Corridor is devastated. Plasteel walls are full of scratches and burns. Seems like there was a fight here. Now it's empty. Wait...
   There's a flashlight on the floor. Now you'll be able to examine other rooms more closely.
   """
+  
+class spider_room(enemy_room):
+  def __init__(self, x, y):
+    super().__init__(x, y, Enemy.Space_Spider())
+    
+  def intro_text(self):
+    if self.enemy.is_alive():
+      return """
+      You find yourself is devastated room. Shards of plasteel and glass are all over the floor.
+      In the corner you see giant Space Spider. It jumps over you!
+      """
+    else:
+      return """
+      You find corpse of the Space Spider. You admire your work for a while and move along.
+      """
+    
