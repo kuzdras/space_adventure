@@ -75,4 +75,12 @@ class spider_room(EnemyRoom):
             return """
             You find corpse of the Space Spider. You admire your work for a while and move along.
             """
+		
+class generic_room(map_tile):
+	def __init__(self,x,y):
+	super().__init__(x,y)
+	
+	def intro_text(self):"""
+	Dirty floor and cracked walls. Lights are flashing. You hear no sound and see nothing special so you decide to proceed to next room.
+	"""
         
